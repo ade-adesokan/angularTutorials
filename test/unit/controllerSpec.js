@@ -4,7 +4,6 @@ describe('PersonalDetailsController', function () {
 
   //Test for name property
   it('should check if the "name" property exists', inject(function ($controller) {  
-
     var scope = {},
         biodataController = $controller('PersonalDetailsController', {$scope: scope});
     expect(scope.name).toBeDefined();
@@ -54,5 +53,12 @@ describe('PersonalDetailsController', function () {
         biodataController = $controller('PersonalDetailsController', {$scope: scope});
     expect(Array.isArray(scope.hobbies)).toEqual(true);
   }));
+
+  it('should check if the length of hobbies is 4', inject(function ($controller) {
+    var scope = {},
+        biodataController = $controller('PersonalDetailsController', {$scope: scope});
+    expect(scope.hobbies.length).toEqual(4);
+  }));
+
 
 });
