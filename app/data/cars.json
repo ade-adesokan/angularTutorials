@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Mercedes-Benz",
+    "numberOfCylinders": 6,
+    "hybrid": false,
+    "availableColors": ["blue", "black", "white", "red"]
+  },
+  {
+    "name": "Volkswagen",
+    "numberOfCylinders": 4,
+    "hybrid": true,
+    "availableColors": ["grey", "black", "white", "green"]  
+  },
+  {
+    "name": "Audi",
+    "numberOfCylinders": 6,
+    "hybrid": false,
+    "availableColors": ["silver", "cosmos-black", "white", "hot-red"]
+  },
+  {
+    "name": "Lamborghini",
+    "numberOfCylinders": 10,
+    "hybrid": false,
+    "availableColors": ["yellow", "black", "white", "red"]
+  },
+  {
+    "name": "Nissan",
+    "numberOfCylinders": 4,
+    "hybrid": true,
+    "availableColors": ["blue", "brown", "white", "red"]
+  }
+]

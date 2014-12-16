@@ -1,10 +1,14 @@
 describe('PersonalDetailsController', function () {
   var scope, 
+      httpBackend,
       biodataController;
   beforeEach( function () {
     module('bioData');
-    inject( function ($controller) {
-      scope = {};
+    inject( function ($httpBackend, $rootScope, $controller) {
+      httpBackend = $httpBackend;
+      httpBackend.expectGET('../../app/data/cars.json').
+        respond([{name: 'Mercedes-Benz'}, {name: 'Volkswagen'}]);
+      scope = $rootScope.$new();
       biodataController = $controller('PersonalDetailsController', {$scope: scope});
     });
     
@@ -49,6 +53,13 @@ describe('PersonalDetailsController', function () {
 
   it('should check if the length of hobbies is 4',function () {
     expect(scope.person.hobbies.length).toEqual(4);
+  });
+
+  //Test for HTTP get
+  it('should create "cars" model with 2 cars fetched from xhr', function () {
+    expect(scope.cars).toBeUndefined();
+    httpBackend.flush();
+    expect(scope.cars).toEqual([{name: 'Mercedes-Benz'}, {name: 'Volkswagen'}]);
   });
 
 
