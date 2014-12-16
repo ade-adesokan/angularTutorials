@@ -2,6 +2,8 @@ describe('PersonalDetailsController', function () {
 
   beforeEach(module('bioData'));
 
+
+
   it('should check if the "name" property exists', inject(function ($controller) {
     var scope = {},
         biodataController = $controller('PersonalDetailsController', {$scope: scope});
@@ -34,7 +36,7 @@ describe('PersonalDetailsController', function () {
     expect(scope.single).toBeDefined();
   }));
 
-  it('should check if the "single" property is a string', inject(function ($controller) {
+  it('should check if the "single" property is a array', inject(function ($controller) {
     var scope = {},
         biodataController = $controller('PersonalDetailsController', {$scope: scope});
     expect(typeof (scope.single)).toEqual("boolean");
@@ -53,6 +55,4 @@ describe('PersonalDetailsController', function () {
     expect(typeof(scope.hobbies)).toEqual("object");
     expect(scope.hobbies.length).toEqual(4);
   }));
-
-
 });
