@@ -1,15 +1,10 @@
 describe('PersonalDetailsController', function () {
 
   beforeEach(module('bioData'));
-<<<<<<< HEAD
 
-
-
-  it('should check if the "name" property exists', inject(function ($controller) {
-=======
   //Test for name property
   it('should check if the "name" property exists', inject(function ($controller) {  
->>>>>>> 61d85f0f8db71905a62e6305d7c8b099927094e2
+
     var scope = {},
         biodataController = $controller('PersonalDetailsController', {$scope: scope});
     expect(scope.name).toBeDefined();
@@ -59,9 +54,5 @@ describe('PersonalDetailsController', function () {
         biodataController = $controller('PersonalDetailsController', {$scope: scope});
     expect(Array.isArray(scope.hobbies)).toEqual(true);
   }));
-<<<<<<< HEAD
-=======
 
-
->>>>>>> 61d85f0f8db71905a62e6305d7c8b099927094e2
 });
