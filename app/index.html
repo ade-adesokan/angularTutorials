@@ -1,13 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html ng-app= "bioData">
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/vendor/bootstrap.css">
   </head>
 
-  <body>
+  <body ng-controller = "PersonalDetailsController">
+    <p>Name: <span ng-bind="person.name"></span></p>
+    <p>Age: <span ng-bind="person.age"></span></p>
+    <p>Single: <span ng-bind="person.single"></span></p>
+    <p>Hobbies: <ul>
+      <li ng-repeat="hobby in person.hobbies" ng-bind="hobby"></li>
+    </ul></p>
     <script src="js/vendor/angular.js"></script>
     <script src="js/vendor/angular-mocks.js"></script>
     <script src="js/vendor/jquery2.1.1.js"></script>
+    <script src="js/custom/app.js"></script>
   </body>
 </html>
