@@ -6,7 +6,7 @@ describe('PersonalDetailsController', function () {
     module('bioData');
     inject( function ($httpBackend, $rootScope, $controller) {
       httpBackend = $httpBackend;
-      httpBackend.expectGET('../../app/data/cars.json').
+      httpBackend.expectGET('../../data/cars.json').
         respond([{name: 'Mercedes-Benz'}, {name: 'Volkswagen'}]);
       scope = $rootScope.$new();
       biodataController = $controller('PersonalDetailsController', {$scope: scope});
