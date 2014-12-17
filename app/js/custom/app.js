@@ -7,8 +7,9 @@
       single: true,
       hobbies: ["football", "movies", "programming", "acting"]
     };
-    $http.get("../../data/cars.json").success(function (data) {
-      $scope.cars = data;
+    $http.get("https://api.github.com/users/andela-aadesokan").success(function (data) {
+      $scope.user = data;
+      console.log($scope.user);
     });
  });
 })();

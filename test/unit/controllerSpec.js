@@ -6,8 +6,8 @@ describe('PersonalDetailsController', function () {
     module('bioData');
     inject( function ($httpBackend, $rootScope, $controller) {
       httpBackend = $httpBackend;
-      httpBackend.expectGET('../../data/cars.json').
-        respond([{name: 'Mercedes-Benz'}, {name: 'Volkswagen'}]);
+      httpBackend.expectGET('https://api.github.com/users/andela-aadesokan').
+        respond({avatar_url: "https://avatars.githubusercontent.com/u/9656476?v=3", public_repos: 5, followers: 0, following: 0});
       scope = $rootScope.$new();
       biodataController = $controller('PersonalDetailsController', {$scope: scope});
     });
@@ -56,10 +56,10 @@ describe('PersonalDetailsController', function () {
   });
 
   //Test for HTTP get
-  it('should create "cars" model with 2 cars fetched from xhr', function () {
-    expect(scope.cars).toBeUndefined();
+  it('should create "user" model with 4 properties fetched from xhr', function () {
+    expect(scope.user).toBeUndefined();
     httpBackend.flush();
-    expect(scope.cars).toEqual([{name: 'Mercedes-Benz'}, {name: 'Volkswagen'}]);
+    expect(scope.user).toEqual({avatar_url: "https://avatars.githubusercontent.com/u/9656476?v=3", public_repos: 5, followers: 0, following: 0});
   });
 
 
