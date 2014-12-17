@@ -5,16 +5,42 @@
     <link rel="stylesheet" href="css/vendor/bootstrap.css">
   </head>
 
-  <body ng-controller = "PersonalDetailsController">
-    <p>Name: <span ng-bind="person.name"></span></p>
-    <p>Age: <span ng-bind="person.age"></span></p>
-    <p>Single: <span ng-bind="person.single"></span></p>
-    <p>Hobbies: <ul>
-      <li ng-repeat="hobby in person.hobbies" ng-bind="hobby"></li>
-    </ul></p>
+  <body class="row" ng-controller = "PersonalDetailsController">
+    <form class="navbar-form navbar-left" role="search">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search">
+      </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+
+
+    <div class="panel panel-default col-md-6 col-md-offset-3">   
+      <div class="panel-heading">
+
+      </div>  
+      <div class="panel-body row">
+        <div class="col-md-6">
+          <p>Username: <span ng-bind="user.login"><span/></p>
+          <p>Name: <span ng-bind="user.name"><span/></p>
+          <p>Email: 
+            <a ng-href ="mailto: {{user.email}}">{{user.email}}</a>
+          </p>
+          <p>Company: <span ng-bind="user.company"><span/></p>
+          <p>Location: <span ng-bind="user.location"><span/></p>
+          <p>Number of Public Repositories: <span ng-bind="user.public_repos"><span/></p>
+        </div>
+        <div class="col-md-6">
+          <img class="img-circle" ng-src= "{{user.avatar_url}}">
+        </div>
+      </div>
+      <div class="panel-footer">&copy Dewunmi & Bread-face</div>
+    </div>
+    
     <script src="js/vendor/angular.js"></script>
     <script src="js/vendor/angular-mocks.js"></script>
-    <script src="js/vendor/jquery2.1.1.js"></script>
+    <script src="js/vendor/jquery-2.1.1.js"></script>
     <script src="js/custom/app.js"></script>
   </body>
 </html>
+
+
